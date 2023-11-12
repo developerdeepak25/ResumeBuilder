@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import "./styles/main.scss";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Reference from "./unrelated/Reference";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Download from "./pages/Download";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <LocalizationProvider dateAdapter={AdapterDayjs}>
+
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        {/* <Route path="/reference" element={<Reference />}></Route> */}
+        <Route path="/download" element={<Download />}></Route>
+      </Routes>
+     </LocalizationProvider>
+    </>
   );
-}
+};
 
 export default App;

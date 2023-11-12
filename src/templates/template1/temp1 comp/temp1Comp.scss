@@ -1,0 +1,138 @@
+// utlity / common styles
+
+.temp-sec-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-top: 0.2em solid #9a9a9a;
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+}
+
+.temp-sec-heading {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+.temp-sec-data {
+  grid-column-start: 6;
+  grid-column-end: 13;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+
+p {
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.04em;
+  // text-transform: ;
+  font-size: 0.8em;
+  overflow-wrap:break-word;
+}
+span {
+  overflow-wrap: break-word;
+}
+
+// template intro styles
+
+// $template-color: #545454;
+
+.temp-intro {
+  padding-top: 3.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+  overflow-wrap: break-word;
+
+  // color: $template-color;
+  h1 {
+    font-size: 2.5em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+  h2 {
+    letter-spacing: 0.04em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+}
+
+/// skills styles
+
+.temp-skills {
+  ul {
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    li {
+      font-size: 0.8em;
+      // list-style:circle;
+      // text-transform;
+      overflow-wrap: break-word;
+      // &::before{
+      //     content: '';
+      //     width: 50%;
+      //     background-color: #000;
+      // }
+    }
+  }
+}
+
+// education  styles
+
+.temp-edus {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  .temp-edu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
+
+// experience styles
+
+.temp-exps {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  .temp-exp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    h3 {
+      span {
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+
+// contact styles
+.temp-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}

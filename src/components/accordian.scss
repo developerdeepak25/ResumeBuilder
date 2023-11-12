@@ -1,0 +1,98 @@
+@import "../styles/variables.scss";
+
+.accordion {
+  // width: 100%;
+  border: 1px solid $stroke-color-l;
+  //   border
+  //   opacity: .9;
+  border-radius: 5px;
+    // transition: .5s ;
+    // transition-property: all;
+  padding: 25px;
+  transition: height 0.5s, scale 0.5s, opacity 0.5s;
+  transform-origin: top;
+  .accordion-header {
+    // margin: ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .acco-hadr-item {
+      display: flex;
+      flex-grow: 1;
+      // padding-bottom: 25px;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        // font-size: ;/
+        text-transform: capitalize;
+        font-weight: 400;
+        margin: 0;
+      }
+      // .acco-dropper-btn{
+
+      // }
+    }
+  }
+  .accordion-body {
+    // width: 100%;
+    // padding: 0 25px;
+    // margin-bottom: 35px;
+    // scale: 1;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 20px;
+    // display: grid;
+    // row-gap: 5px;
+    padding-top: 35px;
+    overflow: hidden;
+    height: initial;
+    // opacity: 1;
+
+    // transition: .5s ;
+    // transition-property: all;
+    // transition: height 0.5s, transform 0.5s, opacity 0.5s, opacity .5s, padding-top 0.4s .1s;
+
+    transform-origin: top;
+
+    // scale: 1 1;
+    &.collapse {
+      // opacity: 0;
+      padding-top: 0;
+      height: 0;
+      // scale: 1 0;
+      // display: none;
+    }
+    .acco-cont-wrapper{
+      display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+  }
+  &.secondary-accordion {
+      border: 1px solid #c9c9c9;
+
+    .accordion-header {
+      // margin: ;
+      .acco-hadr-item {
+        h2{
+          font-size: 18px;
+          color: $secondary-text;
+        }
+        .acco-dropper-btn{
+          color: $secondary-text;
+        }
+      }
+      .delete-btn{
+        margin-left:  10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+//   .accordion-body {
+// &.collapse{
+
+// }
+//   }
+}

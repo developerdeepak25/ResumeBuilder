@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap');
+
+@import './variables.scss';
+
+
+
+*{
+    font-family: 'Roboto', sans-serif !important;
+    // margin: 0;
+    // padding: 0;
+    // box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+  width: 0.5rem; /* Width of the thumb */
+//   background-color: $bg-color;
+}
+// * {
+  // overflow: scroll; /* or overflow: auto; */
+// }
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 0.4rem; /* Rounded thumb */
+  // transition: opacity 1s;
+  background-clip: padding-box;
+  border-right: .1rem solid transparent;
+
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+h2{
+    font-size: 22px;
+
+}
+input{
+    outline: none;
+}
+textarea{
+    outline: none;
+}

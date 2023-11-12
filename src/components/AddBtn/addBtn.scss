@@ -1,0 +1,17 @@
+.add-edu-btn {
+  display:flex;
+  align-items:center;
+  text-transform:capitalize;
+  gap:5px;
+  padding: 5px 10px;
+  color: #00d856;
+  cursor:pointer;
+  &:hover{
+      background-color: #00d85610;
+
+  }
+  add-icon{
+    display: flex;
+    align-items: center;
+  }
+}

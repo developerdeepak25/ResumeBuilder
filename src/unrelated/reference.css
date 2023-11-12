@@ -1,0 +1,34 @@
+     
+.print-container{
+ 
+   display: flex; 
+   /* justify-content: center  */
+}
+
+
+.content-div{
+  /* display: none; */
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column; */
+  /* padding: 20px; */
+   width: 210mm;
+  height: 297mm;
+   /* width: calc(210mm - 5%);
+  height:calc(297mm - 5%) ; */
+  margin: 0 auto;
+  background-color: antiquewhite;
+
+}
+.content{
+  padding: 50px;
+}
+img{
+  width: 100%;
+}
+
+@media print {
+  .content-div {
+    display: block !important;
+  }
+}
