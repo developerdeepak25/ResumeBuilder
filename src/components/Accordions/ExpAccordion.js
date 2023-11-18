@@ -13,7 +13,7 @@ const ExpAccordion = () => {
   const dispatch = useDispatch();
 
   const { experience } = useSelector((state) => {
-    console.log('global state',state);
+    // console.log('global state',state);
     return state.inputs;
   });
   
@@ -56,10 +56,10 @@ const ExpAccordion = () => {
 };
 
 const InnerAccordion = ({ i, state, setState, inputData }) => {
-  console.log(
-    "🚀 ~ file: ExpAccordion.js:63 ~ InnerAccordion ~ inputData:",
-    inputData
-  );
+  // console.log(
+  //   "🚀 ~ file: ExpAccordion.js:63 ~ InnerAccordion ~ inputData:",
+  //   inputData
+  // );
   const { jobTitle, company, location, description, startDate, endDate } =
     inputData;
   const [dateInputDisable, setDateInputDisable] = useState(false);
@@ -67,10 +67,10 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
   const sliceState = useSelector((state) => {
     return state.inputs;
   });
-  console.log(sliceState.experience);
+  // console.log(sliceState.experience);
 
   const deleteExp = (index) => {
-    console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
+    // console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
     // setState(newState);
@@ -86,18 +86,18 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
     const val = e.target.value;
     const name = e.target.name;
 
-    console.log(
-      "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
-      val,
-      name
-    );
+    // console.log(
+    //   "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
+    //   val,
+    //   name
+    // );
 
     dispatch(updateIncrementalInfo({ obj: "experience", i, val, name }));
   };
   const monthChangeHandler = (date, id) => {
     const serializedDate = date.toISOString();
     
-    console.log(serializedDate);   
+    // console.log(serializedDate);   
 
     dispatch(
       updateIncrementalInfo({
@@ -110,7 +110,7 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
   };
 
   useEffect(() => {
-    console.log("inside useEffect");
+    // console.log("inside useEffect");
     dispatch(
       updateIncrementalInfo({
         obj: "experience",

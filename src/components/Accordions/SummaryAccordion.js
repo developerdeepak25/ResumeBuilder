@@ -11,21 +11,21 @@ const SummaryAccordion = () => {
 
   const {summary} = professionalSummary
 
-  console.log(
-    "🚀 ~ file: SummaryAccordion.js:14 ~ const{professionalSummary}=useSelector ~ professionalSummary:",
-    professionalSummary
-  );
+  // console.log(
+  //   "🚀 ~ file: SummaryAccordion.js:14 ~ const{professionalSummary}=useSelector ~ professionalSummary:",
+  //   professionalSummary
+  // );
 
   const dispatch = useDispatch();
   const onChangeHandler = (e) => {
     const val = e.target.value;
     const name = e.target.name;
 
-    console.log(
-      "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
-      val,
-      name
-    );
+    // console.log(
+    //   "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
+    //   val,
+    //   name
+    // );
    
 
     dispatch(

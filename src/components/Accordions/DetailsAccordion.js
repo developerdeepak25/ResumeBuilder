@@ -9,18 +9,18 @@ const DetailsAccordion = () => {
     return state.inputs;
   });
   const {jobTitle,fname, lname,address,phone,email} = personalDetails
-  console.log("personalDetails", personalDetails);
+  // console.log("personalDetails", personalDetails);
 
   const dispatch = useDispatch();
   const onChangeHandler = (e) => {
     const val = e.target.value;
     const name = e.target.name;
 
-    console.log(
-      "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
-      val,
-      name
-    );
+    // console.log(
+    //   "🚀 ~ file: ExpAccordion.js:40 ~ InnerAccordion ~ onChang̥eHandler:",
+    //   val,
+    //   name
+    // );
 
     dispatch(updateNonIncrementalInfo({ obj: "personalDetails", val, name }));
   };

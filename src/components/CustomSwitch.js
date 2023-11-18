@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const CustomSwitch = ({ setInputDisable,label }) => {
   const [checked, setChecked] = useState(false);
-  console.log(checked);
+  // console.log(checked);
 
   useEffect(() => {
     setInputDisable(checked);
@@ -24,14 +24,14 @@ const CustomSwitch = ({ setInputDisable,label }) => {
           <Switch
             onClick={() => setChecked(!checked)}
             sx={{
-              ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked":
-                {
-                  color: "#00d856",
-                },
-              ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
-                {
-                  backgroundColor: "#00d856",
-                },
+              // ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked":
+              ".MuiSwitch-switchBase.Mui-checked": {
+                color: "#00d856",
+              },
+              // ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
+              ".MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track": {
+                backgroundColor: "#00d856",
+              },
             }}
             size="small"
             checked={checked}

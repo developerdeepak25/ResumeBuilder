@@ -14,8 +14,8 @@ const TemplateSkills = () => {
         <div className="temp-sec-data">
           <div className="temp-skills">
             <ul className="ul-skills">
-              {skills.map((skillData) => {
-                return <li className="li-skill">{skillData.skill}</li>;
+              {skills.map((skillData,i) => {
+                return <li key={i} className="li-skill">{skillData.skill}</li>;
               })}
             </ul>
           </div>

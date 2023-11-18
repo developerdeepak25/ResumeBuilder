@@ -14,10 +14,10 @@ const SkillsAccordian = () => {
   const { skills } = useSelector((state) => {
     return state.inputs;
   });
-  console.log(
-    "🚀 ~ file: SkillsAccordion.js:18 ~ const{skills}=useSelector ~ skills:",
-    skills
-  );
+  // console.log(
+  //   "🚀 ~ file: SkillsAccordion.js:18 ~ const{skills}=useSelector ~ skills:",
+  //   skills
+  // );
 
   const addSkill = () => {
     dispatch(
@@ -52,12 +52,12 @@ const InnerAccordion = ({ state, setState, i, inputData }) => {
   const dispatch = useDispatch();
 
   const { skill } = inputData;
-  console.log(
-    "🚀 ~ file: SkillsAccordion.js:53 ~ InnerAccordion ~ skill:",
-    skill
-  );
+  // console.log(
+  //   "🚀 ~ file: SkillsAccordion.js:53 ~ InnerAccordion ~ skill:",
+  //   skill
+  // );
   const deleteSkill = (index) => {
-    console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
+    // console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
     dispatch(

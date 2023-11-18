@@ -15,7 +15,7 @@ const EduAccordian = () => {
   const { education } = useSelector((state) => {
     return state.inputs;
   });
-  console.log("🚀 ~ file: EduAccordion.js:22 ~ const{education}=useSelector ~ education:", education)
+  // console.log("🚀 ~ file: EduAccordion.js:22 ~ const{education}=useSelector ~ education:", education)
   
 
   const addEdu = () => {
@@ -56,7 +56,7 @@ const EduAccordian = () => {
 };
 
 const InnerAccordion = ({ i, state, setState, inputData }) => {
-  console.log("🚀 ~ file: EduAccordion.js:92 ~ InnerAccordion ~ inputData:", inputData)
+  // console.log("🚀 ~ file: EduAccordion.js:92 ~ InnerAccordion ~ inputData:", inputData)
 
   const dispatch = useDispatch()
     const { school, location, degree, startDate, endDate } = inputData;
@@ -66,7 +66,7 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
 
 
   const deleteEdu = (index) => {
-    console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
+    // console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
   
