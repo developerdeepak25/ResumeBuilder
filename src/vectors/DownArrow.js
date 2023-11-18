@@ -4,7 +4,6 @@ const DownArrow = ({width = 12}) => {
   return (
     <svg
       width={width}
-    //   height="8"
       viewBox="0 0 12 8"
       fill="none"
     >

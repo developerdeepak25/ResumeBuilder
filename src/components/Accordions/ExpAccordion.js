@@ -3,30 +3,22 @@ import Accordion from "../Accordion";
 import AddBtn from "../AddBtn/AddBtn";
 import Input, { DatePickerCustom } from "../Input";
 import CustomSwitch from "../CustomSwitch";
-// import { Input } from '@mui/material';
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateIncrementalInfo,
   updateStateArray,
 } from "../../slices/inputSlice/inputSlice";
-// import dayjs from "dayjs";
 
 const ExpAccordion = () => {
-  // const [state, setState] = useState([{ exp: "" }]);
   const dispatch = useDispatch();
 
-  // const [dateInputDisabled, setDateInputDisabled] = useState(false);
   const { experience } = useSelector((state) => {
     console.log('global state',state);
     return state.inputs;
   });
-  // console.log(
-  //   "🚀 ~ file: ExpAccordion.js:17 ~ const{experience}=useSelector ~ experience:",
-  //   experience
-  // );
+  
 
   const addeExp = () => {
-    // setState([...state, { exp: "" }]);
     dispatch(
       updateStateArray({
         obj: "experience",
@@ -53,7 +45,6 @@ const ExpAccordion = () => {
           <InnerAccordion
             i={i}
             state={experience}
-            // setState={setState}
             key={"exp" + i}
             inputData={inputData}
           />
@@ -105,16 +96,8 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
   };
   const monthChangeHandler = (date, id) => {
     const serializedDate = date.toISOString();
-    // const initialDate = new Date(serializedDate);
-
-    // console.log("🚀 ~ file: ExpAccordion.js:62 ~ monthChangeHandler ~ date:", date)
-    // console.log(initialDate.getMonth(), serializedDate);
-    console.log(serializedDate);
-    // console.log(dayjs(serializedDate).format("MMMM")); // can be used to get date value even data "nonselerlaized data" can also be used but gives error when storing to store, we hav econverted date"provided by mui" in iso format to store
-
-    //we will use dayjs to retrive month and year form selrialzedDate value stored in store , in our reume template
-
-   
+    
+    console.log(serializedDate);   
 
     dispatch(
       updateIncrementalInfo({
@@ -137,7 +120,7 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
       })
     );
     
-  }, [dateInputDisable, i]);
+  }, [dateInputDisable, dispatch, i]);
 
   return (
     <Accordion
@@ -168,7 +151,6 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
       />
 
       <div className="form-row">
-        {/* <DatePickerCustom id={"edu-start-date"} name={"start Date"} /> */}
         <DatePickerCustom
           id={"startDate"}
           name={"start Date"}
@@ -176,11 +158,6 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
           value={startDate}
         />
         <div className="form-col">
-          {/* <DatePickerCustom
-            disabled={dateInputDisable}
-            id={"edu-end-date"}
-            name={"end Date"}
-          /> */}
           <DatePickerCustom
             disabled={dateInputDisable}
             id={"endDate"}

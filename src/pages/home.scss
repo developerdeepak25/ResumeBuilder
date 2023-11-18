@@ -1,25 +1,12 @@
 @import "../styles/variables.scss";
 
-// .app-wrapper {
-//   width: 100%;
-//   //   min-height: calc(100vh - 60px);
-//   height: 100vh;
-//   // margin-top: 60px;
-//   display: flex;
-//   .app-container {
-//     margin-top: 60px;
-//     // height: 100%;
-//     width: 100%;
-//     display: flex;
-    .app-editor {
-      width: min(50%, 960px);
-      background-color: $bg-color;
-      overflow-y: scroll;
-    }
-    .page-area {
-      width: max(50%, calc(100% - 960px));
-      background-color: $template-bg;
-      display: flex;
-    }
-//   }
-// }
+.app-editor {
+  width: min(50%, 960px);
+  background-color: $bg-color;
+  overflow-y: scroll;
+}
+.page-area {
+  width: max(50%, calc(100% - 960px));
+  background-color: $template-bg;
+  display: flex;
+}

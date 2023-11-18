@@ -5,21 +5,10 @@ import Delete from "../vectors/Delete";
 
 const Accordion = ({ title, children, variant, onDeleteFunc, state }) => {
   const [collapse, setCollapse] = useState(false);
-  // const [height, setHeight] = useState();
 
   const accordionBodyRef = useRef(null);
 
-  // const getMaxHeight = () => {
-  //   if (accordionBodyRef.current ) {
-        // return collapse ? "0" : `${accordionBodyRef.current.scrollHeight}px`;
-  //  }
-
-  // };
   
-  // useEffect(() => {
-  //   setHeight(collapse ? "0" : `${accordionBodyRef.current.scrollHeight}px`);
-  //   // getMaxHeight()
-  // }, [collapse, state]);
 
   return (
     <div
@@ -47,7 +36,6 @@ const Accordion = ({ title, children, variant, onDeleteFunc, state }) => {
       </div>
       <div
         className={`accordion-body ${collapse ? "collapse" : ""}`}
-        // style={{ maxHeight: height }}
         ref={accordionBodyRef}
       >
         <div className="acco-cont-wrapper">{children}</div>
@@ -56,10 +44,6 @@ const Accordion = ({ title, children, variant, onDeleteFunc, state }) => {
   );
 };
 
-// const InsideAccordion = () => {
-//   return <>
 
-//   </>;
-// };
 
 export default Accordion;

@@ -14,8 +14,7 @@ const TemplateInto = () => {
     <div className="temp-intro">
       <h1>{fname || lname !== "" ? fname + " " + lname : "Your Name"}</h1>
       <h2>{jobTitle !== "" ? jobTitle : "job title or seeking job title"}</h2>
-      {/* <p>{address}</p>  */}
-      {/* give address in contact */}
+     
       <p>{summary !== "" ? summary : "Your professional or personal summary comes here"}</p>
     </div>
   );

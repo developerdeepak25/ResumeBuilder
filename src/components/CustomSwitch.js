@@ -28,12 +28,11 @@ const CustomSwitch = ({ setInputDisable,label }) => {
                 {
                   color: "#00d856",
                 },
-              ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track  ":
+              ".css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track":
                 {
                   backgroundColor: "#00d856",
                 },
             }}
-            // defaultChecked
             size="small"
             checked={checked}
           />

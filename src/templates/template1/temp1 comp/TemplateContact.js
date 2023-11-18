@@ -7,7 +7,6 @@ const TemplateContact = () => {
   });
 
   const { email, address, phone } = personalDetails;
-//   const { summary } = professionalSummary;
 
   return (email || address || phone) !== "" && (
     <div className="temp-sec-wrapper">

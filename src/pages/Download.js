@@ -18,7 +18,6 @@ const Download = () => {
 
   useEffect(() => {
     if (shouldPrint) {
-      // console.log('printing');
       handlePrint();
     }
   }, [handlePrint, shouldPrint]);

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "../Accordion";
-// import { DatePicker } from "@mui/x-date-pickers";
 import Input, { DatePickerCustom } from "../Input";
-// import { FormControlLabel, FormGroup, Switch } from "@mui/material";
 import AddBtn from "../AddBtn/AddBtn";
 import CustomSwitch from "../CustomSwitch";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,12 +8,10 @@ import {
   updateIncrementalInfo,
   updateStateArray,
 } from "../../slices/inputSlice/inputSlice";
-import dayjs from "dayjs";
 
 const EduAccordian = () => {
   const dispatch = useDispatch();
 
-  // const [dateInputDisabled, setDateInputDisabled] = useState(false);
   const { education } = useSelector((state) => {
     return state.inputs;
   });
@@ -23,7 +19,6 @@ const EduAccordian = () => {
   
 
   const addEdu = () => {
-    // setState([...state, { exp: "" }]);
     dispatch(
       updateStateArray({
         obj: "education",
@@ -44,39 +39,12 @@ const EduAccordian = () => {
 
   return (
     <Accordion title={"education"} state={education}>
-      {/* <Input id={"summary"}  type="textarea" /> */}
       {education.map((inputData, i) => {
-        /* return (
-          <Accordion
-            key={i}
-            title={"education " + (i + 1)}
-            variant={"secondary"}
-            onDelete={() => deleteEdu(i)} //this approch might change when we will use redux-toolkit as in redux-toolkit we will not need to pass props as we can use a reducer func from the accordion file
-          >
-            <div className="form-row">
-              <Input id={"school"} name={"School name"} />
-              <Input id={"location"} name={"location"} />
-            </div>
-            <Input id={"degree"} name={"degree"} />
-            <div className="form-row">
-              <DatePickerCustom id={"start-date"} name={"start Date"} />
-              <div className="form-col">
-                <DatePickerCustom
-                  disabled={dateInputDisabled}
-                  id={"end-date"}
-                  name={"end Date"}
-                />
-                <CustomSwitch setDateInputDisabled={setDateInputDisabled} />
-              </div>
-            </div>
-          </Accordion>
-        ); */
+        
         return (
           <InnerAccordion
             key={"edu" + i}
-            // addEdu={addEdu}
             i={i}
-            // setState={setState}
             state={education}
             inputData={inputData}
           />
@@ -96,16 +64,12 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
 
   const [dateInputDisable, setDateInputDisable] = useState(false);
 
-  // const addEdu = () => {
-  //   setState([...state, { edu: "" }]);
-  // };
 
   const deleteEdu = (index) => {
     console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
   
-    // setState(newState);
     dispatch(
       updateStateArray({
         obj: "education",
@@ -124,7 +88,6 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
   const monthChangeHandler = (date, id) => {
     const serializedDate = date.toISOString();
     
-    // console.log("dayjs", dayjs(serializedDate).format("MMMM"),serializedDate ,date);
     
     dispatch(
       updateIncrementalInfo({
@@ -136,7 +99,6 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
     );
   };
    useEffect(() => {
-    //  console.log("inside useEffect");
      dispatch(
        updateIncrementalInfo({
          obj: "education",
@@ -145,7 +107,7 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
          name: "ongoing",
        })
      );
-   }, [dateInputDisable, i]);
+   }, [dateInputDisable, dispatch, i]);
 
   return (
     <Accordion

@@ -12,7 +12,6 @@ const TemplateEducation = () => {
       <div className="temp-sec-heading">education</div>
       <div className="temp-sec-data">
         <div className="temp-edus">
-          {/* <div className="ul-edu"> */}
           {education.map((education) => {
             const { school, degree, location, startDate, endDate, ongoing } =
               education;
@@ -29,7 +28,6 @@ const TemplateEducation = () => {
               </div>
             ) : null;
           })}
-          {/* </div> */}
         </div>
       </div>
     </div>

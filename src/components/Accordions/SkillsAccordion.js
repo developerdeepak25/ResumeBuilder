@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Accordion from "../Accordion";
 import AddBtn from "../AddBtn/AddBtn";
 import Input from "../Input";
@@ -11,11 +11,13 @@ import {
 const SkillsAccordian = () => {
   const dispatch = useDispatch();
 
-  // const [dateInputDisabled, setDateInputDisabled] = useState(false);
   const { skills } = useSelector((state) => {
     return state.inputs;
   });
-  console.log("🚀 ~ file: SkillsAccordion.js:18 ~ const{skills}=useSelector ~ skills:", skills)
+  console.log(
+    "🚀 ~ file: SkillsAccordion.js:18 ~ const{skills}=useSelector ~ skills:",
+    skills
+  );
 
   const addSkill = () => {
     dispatch(
@@ -37,7 +39,6 @@ const SkillsAccordian = () => {
           <InnerAccordion
             i={i}
             state={skills}
-            // setState={setState}
             key={"skill" + i}
             inputData={inputData}
           />
@@ -48,15 +49,17 @@ const SkillsAccordian = () => {
   );
 };
 const InnerAccordion = ({ state, setState, i, inputData }) => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const { skill } = inputData;
-  console.log("🚀 ~ file: SkillsAccordion.js:53 ~ InnerAccordion ~ skill:", skill)
+  console.log(
+    "🚀 ~ file: SkillsAccordion.js:53 ~ InnerAccordion ~ skill:",
+    skill
+  );
   const deleteSkill = (index) => {
     console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
-    // setState(newState);
     dispatch(
       updateStateArray({
         obj: "skills",
@@ -65,20 +68,15 @@ const InnerAccordion = ({ state, setState, i, inputData }) => {
     );
   };
 
-
   const onChangeHandler = (e) => {
     const val = e.target.value;
     const name = e.target.name;
 
-   
-
     dispatch(updateIncrementalInfo({ obj: "skills", i, val, name }));
   };
 
-
   return (
     <Accordion
-      // key={i}
       title={"skill " + (i + 1)}
       variant={"secondary"}
       onDeleteFunc={() => deleteSkill(i)}

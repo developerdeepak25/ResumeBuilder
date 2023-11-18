@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./navbar.scss";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -13,7 +13,6 @@ const Navbar = () => {
 
   return (
     <nav id="navbar" className="navbar">
-      {/* <div className="navbar-inner"> */}
       <div className="navbar-content">
         <div className="logo">
           <NavLink to="/">
@@ -21,7 +20,6 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="resume-controls">
-          {/* <NavLink */}
           {location.pathname !== "/download" ? (
             <NavLink to="/download">
               <button className="rs-dwnld-btn" >
@@ -35,7 +33,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {/* </div> */}
     </nav>
   );
 };

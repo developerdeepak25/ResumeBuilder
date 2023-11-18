@@ -13,7 +13,6 @@ const TemplateExperience = () => {
       <div className="temp-sec-heading">experience</div>
       <div className="temp-sec-data">
         <div className="temp-exps">
-          {/* <div className="ul-edu"> */}
           {experience.map((experience) => {
             const { jobTitle, company, location, startDate, endDate, description,ongoing} =
               experience;
@@ -30,7 +29,6 @@ const TemplateExperience = () => {
               </div>
             ) : null;
           })}
-          {/* </div> */}
         </div>
       </div>
     </div>
