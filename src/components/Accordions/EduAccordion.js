@@ -16,7 +16,6 @@ const EduAccordian = () => {
     return state.inputs;
   });
   // console.log("🚀 ~ file: EduAccordion.js:22 ~ const{education}=useSelector ~ education:", education)
-  
 
   const addEdu = () => {
     dispatch(
@@ -28,8 +27,8 @@ const EduAccordian = () => {
             school: "",
             location: "",
             degree: "",
-            startDate: "2001-01-1",
-            endDate: "2001-01-1",
+            startDate: "2001-01-01",
+            endDate: "2001-01-01",
             ongoing: false,
           },
         ],
@@ -40,7 +39,6 @@ const EduAccordian = () => {
   return (
     <Accordion title={"education"} state={education}>
       {education.map((inputData, i) => {
-        
         return (
           <InnerAccordion
             key={"edu" + i}
@@ -58,18 +56,16 @@ const EduAccordian = () => {
 const InnerAccordion = ({ i, state, setState, inputData }) => {
   // console.log("🚀 ~ file: EduAccordion.js:92 ~ InnerAccordion ~ inputData:", inputData)
 
-  const dispatch = useDispatch()
-    const { school, location, degree, startDate, endDate } = inputData;
-    
+  const dispatch = useDispatch();
+  const { school, location, degree, startDate, endDate } = inputData;
 
   const [dateInputDisable, setDateInputDisable] = useState(false);
-
 
   const deleteEdu = (index) => {
     // console.log("🚀 ~ file: EduAccordian.js:82 ~ deleteEdu ~ index:", index);
 
     const newState = state.filter((_, i) => i !== index);
-  
+
     dispatch(
       updateStateArray({
         obj: "education",
@@ -81,33 +77,33 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
     const val = e.target.value;
     const name = e.target.name;
 
-
     dispatch(updateIncrementalInfo({ obj: "education", i, val, name }));
   };
 
   const monthChangeHandler = (date, id) => {
-    const serializedDate = date.toISOString();
-    
-    
+    if (date.isValid()) {
+      const serializedDate = date.toISOString();
+
+      dispatch(
+        updateIncrementalInfo({
+          obj: "education",
+          i,
+          val: serializedDate,
+          name: id,
+        })
+      );
+    }
+  };
+  useEffect(() => {
     dispatch(
       updateIncrementalInfo({
         obj: "education",
         i,
-        val: serializedDate,
-        name: id,
+        val: dateInputDisable,
+        name: "ongoing",
       })
     );
-  };
-   useEffect(() => {
-     dispatch(
-       updateIncrementalInfo({
-         obj: "education",
-         i,
-         val: dateInputDisable,
-         name: "ongoing",
-       })
-     );
-   }, [dateInputDisable, dispatch, i]);
+  }, [dateInputDisable, dispatch, i]);
 
   return (
     <Accordion
@@ -145,7 +141,7 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
         />
         <div className="form-col">
           <DatePickerCustom
-          disabled={dateInputDisable}
+            disabled={dateInputDisable}
             id={"endDate"}
             name={"End Date"}
             onChange={monthChangeHandler}

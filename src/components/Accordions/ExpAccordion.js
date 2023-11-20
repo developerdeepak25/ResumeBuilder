@@ -16,7 +16,6 @@ const ExpAccordion = () => {
     // console.log('global state',state);
     return state.inputs;
   });
-  
 
   const addeExp = () => {
     dispatch(
@@ -28,8 +27,8 @@ const ExpAccordion = () => {
             jobTitle: "",
             company: "",
             location: "",
-            startDate: "2001-01-1",
-            endDate: "2001-01-1",
+            startDate: "2001-01-01",
+            endDate: "2001-01-01",
             description: "",
             ongoing: false,
           },
@@ -95,18 +94,20 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
     dispatch(updateIncrementalInfo({ obj: "experience", i, val, name }));
   };
   const monthChangeHandler = (date, id) => {
-    const serializedDate = date.toISOString();
-    
-    // console.log(serializedDate);   
+    if (date.isValid()) {
+      const serializedDate = date.toISOString();
 
-    dispatch(
-      updateIncrementalInfo({
-        obj: "experience",
-        i,
-        val: serializedDate,
-        name: id,
-      })
-    );
+      // console.log(serializedDate);
+
+      dispatch(
+        updateIncrementalInfo({
+          obj: "experience",
+          i,
+          val: serializedDate,
+          name: id,
+        })
+      );
+    }
   };
 
   useEffect(() => {
@@ -119,7 +120,6 @@ const InnerAccordion = ({ i, state, setState, inputData }) => {
         name: "ongoing",
       })
     );
-    
   }, [dateInputDisable, dispatch, i]);
 
   return (

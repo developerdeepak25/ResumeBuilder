@@ -13,11 +13,11 @@ const TemplateExperience = () => {
       <div className="temp-sec-heading">experience</div>
       <div className="temp-sec-data">
         <div className="temp-exps">
-          {experience.map((experience) => {
+          {experience.map((experience,i) => {
             const { jobTitle, company, location, startDate, endDate, description,ongoing} =
               experience;
             return jobTitle && company && startDate && location !== "" ? (
-              <div className="temp-exp">
+              <div className="temp-exp" key={i}>
                 <h3>
                   {jobTitle} <span>at {company}, {location}</span>
                 </h3>
